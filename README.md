@@ -1,5 +1,3 @@
-# Projeto criado por Eduardo Dembicki
-
 # Tecnologias utilizadas
 NodeJs \
 PostgreSQL \
@@ -22,7 +20,8 @@ No diretório api, você deve executar:
 Execute a criação do banco de dados padrão:
 ### `npm install`
 
-Verifique as configuracoes do banco de dados no arquivo .env
+Verifique as configuracoes do banco de dados no arquivo 
+### `.env`
 
 Depois disso, realiza a migração das tabelas necessarias:
 ### `npm run migrations`
