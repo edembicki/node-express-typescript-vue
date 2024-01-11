@@ -1,0 +1,125 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "API",
+    "description": "NodeJS + TypeScript + Express"
+  },
+  "host": "localhost:3000",
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "basePath": "/",
+  "paths": {
+    "/auth/users": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Acesso Admin",
+        "responses": {
+          "201": {
+            "description": "Retorna a lista de todos os usuários cadastrados"
+          }
+        }
+      }
+    },
+    "/auth/signup": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Acesso Admin",
+        "parameters": [
+          {
+            "description": "User Data",
+            "name": "message",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/auth.users"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Retorna a lista de todos os usuários cadastrados"
+          }
+        }
+      }
+    },
+    "/api/tasks": {
+      "get": {
+        "tags": [
+          "Tasks"
+        ],
+        "description": "Acesso Admin",
+        "responses": {
+          "201": {
+            "description": "Retorna a lista de todas as tasks cadastradas"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Tasks"
+        ],
+        "description": "Acesso Admin",
+        "parameters": [
+          {
+            "description": "Task Data",
+            "name": "message",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/api.tasks"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Criar task"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "api.tasks": {
+      "type": "object",
+      "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+              "type": "string"
+          },
+          "status": {
+              "type": "string"
+          },
+          "user_id": {
+              "type": "string"
+          }
+      }
+    },
+    "auth.users": {
+      "type": "object",
+      "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+              "type": "string"
+          },
+          "password": {
+              "type": "string"
+          },
+          "role": {
+              "type": "string"
+          }
+      }
+    }
+  }
+}
